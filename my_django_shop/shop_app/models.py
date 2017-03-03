@@ -6,7 +6,9 @@ from django.db import models
 class Category(models.Model):
     title = models.CharField(max_length=254, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
-    parent = models.ForeignKey('self', verbose_name='Родительская категория', null=True, blank=True)
+    parent = models.ForeignKey('self', null=True, blank=True, verbose_name='Родительская категория')
+    order = models.IntegerField(default=1, verbose_name='Порядок показа')
+    alias = models.SlugField(max_length=100, verbose_name='Псевдоним для url', default='')
 
     def __str__(self):
         return self.title

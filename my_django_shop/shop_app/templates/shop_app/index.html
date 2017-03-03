@@ -6,7 +6,7 @@
 </head>
 <body>
   {% for cat in categories %}
-    {{cat.title}} <br/>
+    {{ cat.id }}, {{ cat.title }}, {{ cat.parent }}, {{ cat.order }}<br/>
   {% endfor %}
 
 </body>

@@ -1,7 +1,6 @@
 """ shop_app URL Configuration """
 
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
 from shop_app import views
 
 urlpatterns = [

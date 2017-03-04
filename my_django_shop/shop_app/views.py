@@ -1,8 +1,5 @@
-from django.core import *
-from django.http import HttpResponse
-from django.db import models
+import django.shortcuts
 from .models import Category
-from django.shortcuts import render
 
 
 # Create your views here.
@@ -31,4 +28,4 @@ def home(request):
     menu = menu +'</ul>'
 
     context = {'categories': categories, 'menu': menu}
-    return render(request, 'shop_app/index.html', context)
+    return django.shortcuts.render(request, 'shop_app/index.html', context)

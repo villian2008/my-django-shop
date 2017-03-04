@@ -1,5 +1,7 @@
-import django.shortcuts
-from .models import Category
+from django.shortcuts import render_to_response, render
+from django.template import RequestContext
+
+from .models import Category, CategoryMPTT
 
 
 # Create your views here.
@@ -28,4 +30,9 @@ def home(request):
     menu = menu +'</ul>'
 
     context = {'categories': categories, 'menu': menu}
-    return django.shortcuts.render(request, 'shop_app/index.html', context)
+    return render(request, 'shop_app/index.html', context)
+
+def show_menu(request):
+    return render(request,
+                  "shop_app/menu.html",
+                  {'nodes':CategoryMPTT.objects.all()})

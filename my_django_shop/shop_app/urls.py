@@ -5,4 +5,5 @@ from shop_app import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^menu/', views.show_menu, name='menu'),
 ]
